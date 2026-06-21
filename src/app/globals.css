@@ -18,7 +18,9 @@ html {
 body {
   margin: 0;
   overflow-x: hidden;
-  background: #f7f2e9;
+  background:
+    radial-gradient(circle at 12% 0%, rgba(231, 201, 138, 0.18), transparent 22rem),
+    linear-gradient(180deg, #fffdf8 0%, #f7f2e9 42%, #fffdf8 100%);
   color: #2d2119;
   font-family: var(--font-sans-sc);
   font-size: 16px;
@@ -49,7 +51,7 @@ select {
 }
 
 .container-page {
-  width: min(1180px, calc(100% - 32px));
+  width: min(1180px, calc(100% - 36px));
   margin-inline: auto;
 }
 
@@ -88,11 +90,16 @@ select {
 
 .ornament-line::before,
 .ornament-line::after {
-  background: linear-gradient(90deg, transparent, #c8943e, transparent);
+  background: linear-gradient(90deg, transparent, rgba(200, 148, 62, 0.52), transparent);
   content: "";
   height: 1px;
-  max-width: 120px;
-  width: 18vw;
+  max-width: 96px;
+  width: 14vw;
+}
+
+.quiet-card {
+  border: 1px solid rgba(230, 215, 193, 0.86);
+  box-shadow: 0 10px 28px rgba(53, 26, 8, 0.055);
 }
 
 @media (prefers-reduced-motion: reduce) {

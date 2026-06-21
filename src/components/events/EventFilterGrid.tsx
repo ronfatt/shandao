@@ -12,12 +12,12 @@ export function EventFilterGrid({ events }: { events: Event[] }) {
 
   return (
     <div>
-      <div className="-mx-4 mb-6 flex gap-2 overflow-x-auto px-4 pb-2 md:mx-0 md:px-0">
+      <div className="-mx-4 mb-7 flex gap-2 overflow-x-auto px-4 pb-2 md:mx-0 md:px-0">
         {[{ slug: "all", name: "全部" }, ...branches].map((item) => (
           <button
             className={cn(
               "min-h-11 shrink-0 rounded-full border px-4 text-sm font-semibold transition",
-              branch === item.slug ? "border-brand-brown bg-brand-brown text-white" : "border-border-warm bg-white text-brand-brown hover:border-brand-gold",
+              branch === item.slug ? "border-brand-brown bg-brand-brown text-white shadow-[0_8px_18px_rgba(98,55,15,.14)]" : "border-border-warm bg-white/82 text-brand-brown hover:border-brand-gold/70",
             )}
             key={item.slug}
             type="button"
@@ -27,7 +27,7 @@ export function EventFilterGrid({ events }: { events: Event[] }) {
           </button>
         ))}
       </div>
-      <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+      <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
         {filtered.map((event) => <EventCard key={event.id} event={event} />)}
       </div>
     </div>

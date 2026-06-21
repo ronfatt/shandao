@@ -29,12 +29,13 @@ const config: Config = {
         sans: ["var(--font-sans-sc)", "Noto Sans SC", "Microsoft YaHei", "sans-serif"],
       },
       boxShadow: {
-        soft: "0 18px 50px rgba(53, 26, 8, 0.09)",
-        warm: "0 10px 30px rgba(98, 55, 15, 0.13)",
+        soft: "0 14px 36px rgba(53, 26, 8, 0.07)",
+        warm: "0 18px 42px rgba(98, 55, 15, 0.12)",
+        card: "0 10px 28px rgba(53, 26, 8, 0.055)",
       },
       backgroundImage: {
         "temple-lines":
-          "radial-gradient(circle at 15% 20%, rgba(231,201,138,.16), transparent 26%), radial-gradient(circle at 86% 18%, rgba(200,148,62,.18), transparent 28%), linear-gradient(135deg, rgba(53,26,8,.98), rgba(98,55,15,.9))",
+          "radial-gradient(circle at 16% 18%, rgba(231,201,138,.13), transparent 24rem), radial-gradient(circle at 86% 20%, rgba(200,148,62,.12), transparent 28rem), linear-gradient(135deg, rgba(53,26,8,.99), rgba(98,55,15,.9) 58%, rgba(64,31,10,.98))",
       },
     },
   },

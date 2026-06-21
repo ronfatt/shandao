@@ -13,17 +13,17 @@ export function Footer() {
   ];
 
   return (
-    <footer className="bg-brand-brown-dark text-white">
-      <div className="container-page grid gap-8 py-12 lg:grid-cols-[1.25fr_1fr_1fr_1.25fr]">
+    <footer className="bg-[linear-gradient(180deg,#3b1d09,#2b1306)] text-white">
+      <div className="container-page grid gap-9 py-14 lg:grid-cols-[1.25fr_1fr_1fr_1.25fr]">
         <div>
-          <h2 className="serif-title text-3xl font-bold">善导精舍</h2>
-          <p className="mt-4 text-white/72">
+          <h2 className="serif-title text-[2rem] font-bold">善导精舍</h2>
+          <p className="mt-4 max-w-sm text-[15px] leading-7 text-white/66">
             以正信佛法为根本，致力于修学弘法、社区慈善与心灵关怀。正式简介待善导精舍确认。
           </p>
           <p className="mt-6 text-sm text-white/55">{siteConfig.copyright}</p>
         </div>
         <div>
-          <h3 className="mb-4 text-lg font-bold text-brand-gold-light">联系方式</h3>
+          <h3 className="mb-4 text-base font-bold tracking-[0.08em] text-brand-gold-light/90">联系方式</h3>
           <ul className="space-y-2 text-white/72">
             <li className="flex gap-2"><Phone className="mt-1 h-4 w-4" aria-hidden />{siteConfig.contact.phone}</li>
             <li className="flex gap-2"><Mail className="mt-1 h-4 w-4" aria-hidden />{siteConfig.contact.email}</li>
@@ -45,7 +45,7 @@ export function Footer() {
           </div>
         </div>
         <div>
-          <h3 className="mb-4 text-lg font-bold text-brand-gold-light">快速链接</h3>
+          <h3 className="mb-4 text-base font-bold tracking-[0.08em] text-brand-gold-light/90">快速链接</h3>
           <ul className="grid gap-2 text-white/72">
             {siteConfig.navigation.slice(1).map((item) => (
               <li key={item.href}><Link className="hover:text-brand-gold-light" href={item.href}>{item.label}</Link></li>
@@ -55,13 +55,13 @@ export function Footer() {
           </ul>
         </div>
         <div>
-          <h3 className="mb-4 text-lg font-bold text-brand-gold-light">五家分院</h3>
+          <h3 className="mb-4 text-base font-bold tracking-[0.08em] text-brand-gold-light/90">五家分院</h3>
           <ul className="mb-6 grid gap-2 text-white/72">
             {branches.map((branch) => (
               <li key={branch.id}><Link className="hover:text-brand-gold-light" href={`/branches/${branch.slug}`}>{branch.name}</Link></li>
             ))}
           </ul>
-          <DemoForm title="订阅善导资讯" fields="subscribe" />
+          <DemoForm title="订阅善导资讯" fields="subscribe" tone="dark" />
         </div>
       </div>
     </footer>
