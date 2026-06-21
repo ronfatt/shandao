@@ -36,7 +36,12 @@ export default async function EventDetailPage({ params }: { params: Promise<{ sl
             </dl>
             <h3 className="serif-title mt-8 text-2xl font-bold text-brand-brown-dark">注意事项</h3>
             <ul className="mt-4 list-inside list-disc text-text-secondary">{event.notes.map((note) => <li key={note}>{note}</li>)}</ul>
-            <div className="mt-8 flex gap-3"><ButtonLink href="/events" variant="outline">返回活动列表</ButtonLink><ButtonLink href="#" variant="brown">分享按钮</ButtonLink></div>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <ButtonLink href="/events" variant="outline">返回活动列表</ButtonLink>
+              <button className="min-h-11 rounded-full border border-border-warm bg-white px-5 py-2.5 text-[17px] font-semibold text-text-secondary" type="button" disabled>
+                分享功能待上线
+              </button>
+            </div>
           </article>
           <div id="register"><DemoForm title="活动报名" fields="registration" /></div>
         </div>

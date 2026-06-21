@@ -14,10 +14,10 @@ export const siteConfig = {
     email: "官方资料待确认",
   } satisfies ContactInfo,
   socialLinks: {
-    facebook: "#",
-    youtube: "#",
-    instagram: "#",
-    whatsapp: "#",
+    facebook: "",
+    youtube: "",
+    instagram: "",
+    whatsapp: "",
   },
   navigation: [
     { label: "首页", href: "/" },

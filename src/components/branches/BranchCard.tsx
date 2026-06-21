@@ -15,13 +15,20 @@ export function BranchCard({ branch }: { branch: Branch }) {
         <p className="mt-3 line-clamp-2 text-[15px] leading-7 text-text-secondary">{branch.description}</p>
         <div className="mt-4 flex flex-wrap gap-2">
           <ButtonLink className="px-4 text-sm" href={`/branches/${branch.slug}`} variant="brown">查看分院</ButtonLink>
-          <Link
-            className="inline-flex min-h-10 items-center gap-1 rounded-full border border-border-warm bg-white px-3 text-sm font-semibold text-brand-brown hover:border-brand-gold"
-            href={branch.mapUrl}
-          >
-            <MapPin className="h-4 w-4" aria-hidden />
-            路线导航
-          </Link>
+          {branch.mapUrl ? (
+            <Link
+              className="inline-flex min-h-10 items-center gap-1 rounded-full border border-border-warm bg-white px-3 text-sm font-semibold text-brand-brown hover:border-brand-gold"
+              href={branch.mapUrl}
+            >
+              <MapPin className="h-4 w-4" aria-hidden />
+              路线导航
+            </Link>
+          ) : (
+            <span className="inline-flex min-h-10 items-center gap-1 rounded-full border border-border-warm bg-white px-3 text-sm font-semibold text-text-secondary" aria-disabled="true">
+              <MapPin className="h-4 w-4" aria-hidden />
+              路线待确认
+            </span>
+          )}
         </div>
       </div>
     </article>

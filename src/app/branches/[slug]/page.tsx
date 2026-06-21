@@ -45,7 +45,11 @@ export default async function BranchDetailPage({ params }: { params: Promise<{ s
               <div><dt className="font-bold text-text-primary">WhatsApp</dt><dd>{branch.whatsapp}</dd></div>
               <div><dt className="font-bold text-text-primary">Email</dt><dd>{branch.email}</dd></div>
             </dl>
-            <ButtonLink className="mt-6" href={branch.mapUrl} variant="brown">Google Map按钮</ButtonLink>
+            {branch.mapUrl ? (
+              <ButtonLink className="mt-6" href={branch.mapUrl} variant="brown">Google Map按钮</ButtonLink>
+            ) : (
+              <p className="mt-6 rounded-xl border border-border-warm bg-white px-4 py-3 text-sm font-semibold text-text-secondary">Google Map 链接待确认</p>
+            )}
           </aside>
         </div>
       </section>

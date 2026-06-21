@@ -1,10 +1,17 @@
 import Link from "next/link";
 import { Facebook, Instagram, Mail, Phone, Youtube } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 import { siteConfig } from "@/config/site";
 import { branches } from "@/data/branches";
 import { DemoForm } from "@/components/ui/DemoForm";
 
 export function Footer() {
+  const socialItems: Array<{ href: string; label: string; icon: LucideIcon }> = [
+    { href: siteConfig.socialLinks.facebook, label: "Facebook", icon: Facebook },
+    { href: siteConfig.socialLinks.youtube, label: "YouTube", icon: Youtube },
+    { href: siteConfig.socialLinks.instagram, label: "Instagram", icon: Instagram },
+  ];
+
   return (
     <footer className="bg-brand-brown-dark text-white">
       <div className="container-page grid gap-8 py-12 lg:grid-cols-[1.25fr_1fr_1fr_1.25fr]">
@@ -23,9 +30,18 @@ export function Footer() {
             <li>{siteConfig.contact.address}</li>
           </ul>
           <div className="mt-5 flex gap-3" aria-label="社交媒体链接">
-            <Link className="rounded-full border border-white/20 p-2 hover:bg-white/10" href={siteConfig.socialLinks.facebook} aria-label="Facebook"><Facebook className="h-5 w-5" /></Link>
-            <Link className="rounded-full border border-white/20 p-2 hover:bg-white/10" href={siteConfig.socialLinks.youtube} aria-label="YouTube"><Youtube className="h-5 w-5" /></Link>
-            <Link className="rounded-full border border-white/20 p-2 hover:bg-white/10" href={siteConfig.socialLinks.instagram} aria-label="Instagram"><Instagram className="h-5 w-5" /></Link>
+            {socialItems.map((item) => {
+              const Icon = item.icon;
+              return item.href ? (
+                <Link className="rounded-full border border-white/20 p-2 hover:bg-white/10" href={item.href} aria-label={item.label} key={item.label}>
+                  <Icon className="h-5 w-5" />
+                </Link>
+              ) : (
+                <span className="rounded-full border border-white/10 p-2 text-white/35" aria-label={`${item.label} 待确认`} aria-disabled="true" key={item.label}>
+                  <Icon className="h-5 w-5" />
+                </span>
+              );
+            })}
           </div>
         </div>
         <div>
