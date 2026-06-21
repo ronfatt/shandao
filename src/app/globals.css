@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-serif-sc: "Noto Serif SC", "Songti SC", serif;
+  --font-sans-sc: "Noto Sans SC", "Microsoft YaHei", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  background: #f7f2e9;
+  color: #2d2119;
+  font-family: var(--font-sans-sc);
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+a,
+input,
+textarea,
+select {
+  outline-offset: 4px;
+}
+
+:focus-visible {
+  outline: 3px solid #e7c98a;
+  outline-offset: 4px;
+}
+
+::selection {
+  background: #e7c98a;
+  color: #351a08;
+}
+
+.container-page {
+  width: min(1180px, calc(100% - 32px));
+  margin-inline: auto;
+}
+
+.serif-title {
+  font-family: var(--font-serif-sc);
+  letter-spacing: 0;
+}
+
+.lotus-pattern {
+  position: relative;
+}
+
+.lotus-pattern::before {
+  background:
+    radial-gradient(circle at 10% 10%, rgba(200, 148, 62, 0.12), transparent 18rem),
+    radial-gradient(circle at 90% 20%, rgba(98, 55, 15, 0.08), transparent 16rem),
+    linear-gradient(180deg, rgba(255, 253, 248, 0.82), rgba(247, 242, 233, 0.92));
+  content: "";
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+  z-index: 0;
+}
+
+.lotus-pattern > * {
+  position: relative;
+  z-index: 1;
+}
+
+.ornament-line {
+  align-items: center;
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+}
+
+.ornament-line::before,
+.ornament-line::after {
+  background: linear-gradient(90deg, transparent, #c8943e, transparent);
+  content: "";
+  height: 1px;
+  max-width: 120px;
+  width: 18vw;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
